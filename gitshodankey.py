@@ -20,8 +20,8 @@ def test_key(k):
         if shodan_api.info()['query_credits'] >= 50:
             with open(outfile, 'a+') as f:
                 f.write(k + " : " + str(shodan_api.info()['query_credits']) + "\n")
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 
 def search(k, s):
