@@ -64,8 +64,8 @@ outfile = sys.argv[2]
 searchList = ["shodan_api_key =", "shodan_api_key=", "api_shodan_key=", "api_shodan_key =",
               "api = Shodan(", "api=Shodan(", "api = shodan.Shodan(", "api=shodan.Shodan("]
 
-#for searchString in searchList:
-#    search(key, searchString)
+for searchString in searchList:
+    search(key, searchString)
 
 remove_duplicates(outfile)
 
