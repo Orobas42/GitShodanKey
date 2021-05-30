@@ -64,7 +64,8 @@ if len(sys.argv) != 3:
     exit()
 
 searchList = ["shodan_api_key =", "shodan_api_key=", "api_shodan_key=", "api_shodan_key =",
-              "api = Shodan(", "api=Shodan(", "api = shodan.Shodan(", "api=shodan.Shodan("]
+              "api = Shodan(", "api=Shodan(", "api = shodan.Shodan(", "api=shodan.Shodan(",
+              "s = Shodan(", "s=Shodan(", "s = shodan.Shodan(", "s=shodan.Shodan("]
 
 for searchString in searchList:
     search(sys.argv[1], sys.argv[2], searchString)
