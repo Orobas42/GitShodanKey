@@ -7,11 +7,15 @@ from github import Github
 def clean(o):
     ls = []
     keyList = []
-    with open(o, 'r+') as f:
-        for line in f.readlines():
-            if line.split(" ")[0] not in keyList:
-                ls.append(line)
-                keyList.append(line.split(" ")[0])
+    
+    try:
+        with open(o, 'r+') as f:
+            for line in f.readlines():
+                if line.split(" ")[0] not in keyList:
+                    ls.append(line)
+                    keyList.append(line.split(" ")[0])
+    except:
+        pass
 
     with open(o, 'w') as f:
         for l in ls:
