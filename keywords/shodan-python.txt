@@ -1,0 +1,10 @@
+shodan_api_key=
+api_shodan_key=
+api=shodan(
+api=shodan.shodan(
+s=shodan(
+s=shodan.shodan(
+shodan_api=shodan(
+shodan_api=shodan.shodan(
+shodankey=
+shodan_key=
