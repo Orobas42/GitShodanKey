@@ -1,6 +1,8 @@
 # GitShodanKey
-Searching for Shodan api keys in public Github repositories
-<br/>Last Search: 11-2021 found 19 unique Shodan api keys within approximately 12 hours
+GitShodanKey searches public Github repositories for published Shodan api keys.
+<br/>Last search 11-2021: 19 unique Shodan api keys were found within about 12 hours.
+
+Since this is just a research project, I will not reveal any keys found! Use at your own risk!
 
 Usage: $> gitshodankey.py \<github-api-token> <keys.out>
   
