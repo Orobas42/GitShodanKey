@@ -7,7 +7,7 @@ Since this is just a research project, I will not reveal any keys found! Use at 
 Usage: $> gitshodankey.py \<github-api-token> <keys.out>
   
 Requirement:
-<br/>&nbsp;&nbsp;  GitHub API Key
+<br/>&nbsp;&nbsp;  GitHub API Token
 
 Dependencies:
 <br/>&nbsp;&nbsp;  pip install PyGithub
