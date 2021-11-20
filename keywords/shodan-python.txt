@@ -1,3 +1,5 @@
+sd=shodan(
+sd=shodan.shodan(
 shodan_api_key=
 api_shodan_key=
 api=shodan(
