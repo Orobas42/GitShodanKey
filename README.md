@@ -10,5 +10,6 @@ Requirement:
 <br/>&nbsp;&nbsp;  GitHub API Token
 
 Dependencies:
+<br/>&nbsp;&nbsp;  python v3.9+
 <br/>&nbsp;&nbsp;  pip install PyGithub
 <br/>&nbsp;&nbsp;  pip install shodan
