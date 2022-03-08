@@ -33,9 +33,6 @@ def check(k, o):
 
 
 def search(t, o, k, l):
-    api = None
-    repos = None
-
     while True:
         try:
             api = Github(t)
@@ -51,13 +48,6 @@ def search(t, o, k, l):
     for i in range(0, tc):
         while True:
             try:
-                if i % 20 == 0:
-                    if api.get_rate_limit().core.remaining.real <= 40:
-                        print("Github rate limit exceeded. Waiting for reset: " + str(api.get_rate_limit().core.reset.time()) + " GMT")
-                        while api.get_rate_limit().core.remaining.real <= 5:
-                            time.sleep(10)
-                        print("Resume searching ...")
-
                 lines = str(repos.get_page(i)[0].decoded_content, 'utf-8').split("\n")
 
                 for line in lines:
@@ -76,7 +66,6 @@ def search(t, o, k, l):
             except Exception as e:
                 if "rate limit" in str(e):
                     time.sleep(30)
-                    i -= 1
                     continue
             break
 
