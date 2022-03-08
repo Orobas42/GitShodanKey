@@ -36,47 +36,49 @@ def search(t, o, k, l):
     api = None
     repos = None
 
-    try:
-        api = Github(t)
-        api.per_page = 1
-        repos = api.search_code(l + k)
-    except Exception as e:
-        if "rate limit" in str(e):
-            time.sleep(150)
+    while True:
+        try:
             api = Github(t)
             api.per_page = 1
             repos = api.search_code(l + k)
-            pass
-
-    for i in range(0, repos.totalCount):
-        try:
-            if i % 100 == 0:
-                if api.get_rate_limit().core.remaining.real <= 100:
-                    print("Github rate limit exceeded. Waiting for reset: " + str(api.get_rate_limit().core.reset.time()) + " GMT")
-                    while api.get_rate_limit().core.remaining.real <= 10:
-                        time.sleep(10)
-                    print("Resume searching ...")
-
-            lines = str(repos.get_page(i)[0].decoded_content, 'utf-8').split("\n")
-
-            for line in lines:
-                original = line
-                line = line.strip().lower().replace(' ', '')
-
-                if k + '"' in line:
-                    split = original.split('"')
-                    if len(split[1]) == 32:
-                        check(split[1], o)
-                elif k + "'" in line:
-                    split = original.split("'")
-                    if len(split[1]) == 32:
-                        check(split[1], o)
-
+            tc = repos.totalCount
         except Exception as e:
             if "rate limit" in str(e):
                 time.sleep(30)
-                i -= 1
-                pass
+                continue
+        break
+
+    for i in range(0, tc):
+        while True:
+            try:
+                if i % 20 == 0:
+                    if api.get_rate_limit().core.remaining.real <= 40:
+                        print("Github rate limit exceeded. Waiting for reset: " + str(api.get_rate_limit().core.reset.time()) + " GMT")
+                        while api.get_rate_limit().core.remaining.real <= 5:
+                            time.sleep(10)
+                        print("Resume searching ...")
+
+                lines = str(repos.get_page(i)[0].decoded_content, 'utf-8').split("\n")
+
+                for line in lines:
+                    original = line
+                    line = line.strip().lower().replace(' ', '')
+
+                    if k + '"' in line:
+                        split = original.split('"')
+                        if len(split[1]) == 32:
+                            check(split[1], o)
+                    elif k + "'" in line:
+                        split = original.split("'")
+                        if len(split[1]) == 32:
+                            check(split[1], o)
+
+            except Exception as e:
+                if "rate limit" in str(e):
+                    time.sleep(30)
+                    i -= 1
+                    continue
+            break
 
 
 try:
