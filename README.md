@@ -11,5 +11,5 @@ Requirement:
 
 Dependencies:
 <br/>&nbsp;&nbsp;  python v3.9+
-<br/>&nbsp;&nbsp;  pip install PyGithub
-<br/>&nbsp;&nbsp;  pip install shodan
+<br/>&nbsp;&nbsp;  pip3 install PyGithub
+<br/>&nbsp;&nbsp;  pip3 install shodan
