@@ -33,6 +33,8 @@ def check(k, o):
 
 
 def search(t, o, k, l):
+    tc = 0
+    
     while True:
         try:
             api = Github(t)
