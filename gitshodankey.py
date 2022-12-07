@@ -42,7 +42,7 @@ def search(t, o, k, l):
         except Exception as e:
             if "rate limit" in str(e):
                 time.sleep(30)
-                continue
+            continue
         break
 
     for i in range(0, tc):
@@ -66,7 +66,7 @@ def search(t, o, k, l):
             except Exception as e:
                 if "rate limit" in str(e):
                     time.sleep(30)
-                    continue
+                continue
             break
 
 
