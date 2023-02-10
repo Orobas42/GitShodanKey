@@ -4,7 +4,7 @@ GitShodanKey browses public Github repositories for publicly leaked Shodan API k
 
 Since this is just a research project, I will not reveal any keys found! Use at your own risk!
 
-Usage: `$python3 gitshodankey.py \<github-api-token> <keys.out>`
+Usage: `python3 gitshodankey.py <github-api-token> <keys.out>`
 <br>Example: `python3 gitshodankey.py ghp_...GKu keys`
 
 Requirements:
