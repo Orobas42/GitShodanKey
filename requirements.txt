@@ -1,0 +1,2 @@
+PyGithub==1.57
+shodan==1.28.0
