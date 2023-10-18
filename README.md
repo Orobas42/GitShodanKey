@@ -1,7 +1,5 @@
 # GitShodanKey
 
----
-
 This tool is now somewhat outdated. There are now better and faster ways to find a published API key on Github. 
 <br/>The new Github code search for example.
 <br/>https://github.com/search?q=shodan_api_key%3D+remove&type=commits
